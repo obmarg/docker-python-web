@@ -10,6 +10,7 @@ EXPOSE 8080
 
 # Default ENV settings
 ENV NUM_WORKERS 4
+ENV APP_DIR /home/app
 
 # Disable ssh login
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
