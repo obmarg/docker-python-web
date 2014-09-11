@@ -27,7 +27,7 @@ RUN pip install gunicorn
 # Install gunicorn running script
 RUN mkdir /etc/service/gunicorn
 ADD run_gunicorn.sh /etc/service/gunicorn/run
-RUN chmod +x /etc/service/gunicorn
+RUN chmod +x /etc/service/gunicorn/run
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
