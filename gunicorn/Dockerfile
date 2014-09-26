@@ -29,5 +29,8 @@ RUN mkdir /etc/service/gunicorn
 ADD run_gunicorn.sh /etc/service/gunicorn/run
 RUN chmod +x /etc/service/gunicorn/run
 
+# Upgrade bash to avoid shellshock.
+RUN apt-get upgrade -y bash
+
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
