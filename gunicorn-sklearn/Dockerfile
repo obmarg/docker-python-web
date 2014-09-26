@@ -1,4 +1,4 @@
-FROM obmarg/gunicorn:v2
+FROM obmarg/gunicorn:v3
 
 # Install the fortran compiler needed for numpy
 RUN apt-get update
