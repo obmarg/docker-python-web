@@ -1,8 +1,8 @@
-FROM obmarg/gunicorn:v3
+FROM obmarg/gunicorn:v4
 
 # Install the fortran compiler needed for numpy
 RUN apt-get update
-RUN apt-get install -y g++ gfortran 
+RUN apt-get install -y g++ gfortran
 
 # Install libblas & liblapack, required for numpy
 RUN apt-get install -y libblas-dev liblapack-dev

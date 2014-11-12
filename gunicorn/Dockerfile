@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.13
+FROM phusion/baseimage:0.9.15
 
 # Set correct environment variables.
 ENV HOME /root
@@ -16,7 +16,7 @@ ENV APP_DIR /home/app
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Setup a user for running the application
-RUN useradd app -d /home/app 
+RUN useradd app -d /home/app
 
 # Install global dependencies
 RUN apt-get update
@@ -28,9 +28,6 @@ RUN pip install gunicorn
 RUN mkdir /etc/service/gunicorn
 ADD run_gunicorn.sh /etc/service/gunicorn/run
 RUN chmod +x /etc/service/gunicorn/run
-
-# Upgrade bash to avoid shellshock.
-RUN apt-get upgrade -y bash
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
