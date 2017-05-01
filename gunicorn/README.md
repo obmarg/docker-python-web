@@ -22,3 +22,4 @@ The avaliable configuration variables are:
   to this directory.  This defaults ot `/home/app`.
 * NUM_WORKERS - The number of workers to instruct gunicorn to start.  This
   defaults to 4.
+* PORT - The port to run on.  Defaults to 8080.
