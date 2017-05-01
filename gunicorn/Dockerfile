@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage:0.9.21
 
 # Set correct environment variables.
 ENV HOME /root
